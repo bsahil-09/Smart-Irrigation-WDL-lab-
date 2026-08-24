@@ -1,0 +1,70 @@
+/* TASK 7 - TABLE STYLING */
+
+.irrigation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+    background-color: white;
+}
+
+.irrigation-table caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.irrigation-table th,
+.irrigation-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+.irrigation-table thead tr {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+}
+
+.irrigation-table tbody tr:nth-child(even) {
+    background: linear-gradient(90deg, #f0f8f1, #e8f5e9);
+}
+
+.irrigation-table tbody tr:hover {
+    background: linear-gradient(90deg, #dff1e1, #c8e6c9);
+}
+
+.irrigation-table tfoot {
+    background: linear-gradient(135deg, #0d4d16, #1b5e20);
+    color: white;
+    font-weight: bold;
+}
+
+.alert-high {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.alert-medium {
+    color: #ef6c00;
+    font-weight: bold;
+}
+
+.alert-low {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .irrigation-table {
+        font-size: 0.85em;
+    }
+
+    .irrigation-table th,
+    .irrigation-table td {
+        padding: 8px;
+    }
+}

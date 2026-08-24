@@ -1,0 +1,125 @@
+<!-- plot-map.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Plot Map - Smart Irrigation Advisory System (KJS-AGR-01)</title>
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<header>
+    <h1>AI-based Smart Irrigation Advisory System (KJS-AGR-01)</h1>
+    <p class="tagline">Smart Irrigation using AI &amp; Sensor Technology</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farm-info.html">Farm Information</a></li>
+        <li><a href="dashboard.html">Farm Dashboard</a></li>
+        <li><a href="advisory.html">Irrigation Advisory</a></li>
+        <li><a href="irrigation-table.html">Sensor Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <section>
+
+        <h2>Interactive Farm Plot Map</h2>
+
+        <p style="text-align: left;">
+            Hover over and click on any farm plot on the map below to jump
+            directly to its real-time irrigation advisory and soil sensor
+            diagnostics.
+        </p>
+
+        <div class="map-wrapper">
+
+            <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23e8f5e9'/><path d='M270 0 v400 M510 0 v400' stroke='%23ffffff' stroke-width='16'/><rect x='50' y='50' width='200' height='300' fill='%23a5d6a7' rx='8' stroke='%232e7d32' stroke-width='3'/><text x='150' y='180' font-family='Arial' font-size='22' font-weight='bold' fill='%231b5e20' text-anchor='middle'>PLOT A</text><text x='150' y='210' font-family='Arial' font-size='14' fill='%232e7d32' text-anchor='middle'>North Field</text><text x='150' y='235' font-family='Arial' font-size='12' fill='%23333333' text-anchor='middle'>Stage: Germination</text><rect x='290' y='50' width='200' height='300' fill='%2381c784' rx='8' stroke='%232e7d32' stroke-width='3'/><text x='390' y='180' font-family='Arial' font-size='22' font-weight='bold' fill='%231b5e20' text-anchor='middle'>PLOT B</text><text x='390' y='210' font-family='Arial' font-size='14' fill='%232e7d32' text-anchor='middle'>Central Field</text><text x='390' y='235' font-family='Arial' font-size='12' fill='%23333333' text-anchor='middle'>Stage: Grand Growth</text><rect x='530' y='50' width='200' height='300' fill='%23c8e6c9' rx='8' stroke='%232e7d32' stroke-width='3'/><text x='630' y='180' font-family='Arial' font-size='22' font-weight='bold' fill='%231b5e20' text-anchor='middle'>PLOT C</text><text x='630' y='210' font-family='Arial' font-size='14' fill='%232e7d32' text-anchor='middle'>South Field</text><text x='630' y='235' font-family='Arial' font-size='12' fill='%23333333' text-anchor='middle'>Stage: Maturity</text></svg>"
+                alt="KJS-AGR-01 Sugarcane Farm Layout Map"
+                usemap="#farmmap"
+                width="800"
+                height="400">
+
+            <map name="farmmap">
+
+                <area
+                    shape="rect"
+                    coords="50,50,250,350"
+                    href="advisory.html#plotA"
+                    alt="Plot A - North Field Information"
+                    title="Click to view Plot A (North Field) Irrigation Advisory">
+
+                <area
+                    shape="rect"
+                    coords="290,50,490,350"
+                    href="advisory.html#plotB"
+                    alt="Plot B - Central Field Information"
+                    title="Click to view Plot B (Central Field) Irrigation Advisory">
+
+                <area
+                    shape="rect"
+                    coords="530,50,730,350"
+                    href="advisory.html#plotC"
+                    alt="Plot C - South Field Information"
+                    title="Click to view Plot C (South Field) Irrigation Advisory">
+
+            </map>
+
+        </div>
+
+        <div class="plot-legend">
+
+            <div class="legend-card">
+                <h3>Plot A (North Zone)</h3>
+                <p><strong>Crop Stage:</strong> Germination</p>
+                <p><strong>Irrigation Type:</strong> Drip Line</p>
+                <p>
+                    <a href="advisory.html#plotA">
+                        View Plot A Details &rarr;
+                    </a>
+                </p>
+            </div>
+
+            <div class="legend-card">
+                <h3>Plot B (Central Zone)</h3>
+                <p><strong>Crop Stage:</strong> Grand Growth</p>
+                <p><strong>Irrigation Type:</strong> Sub-surface Drip</p>
+                <p>
+                    <a href="advisory.html#plotB">
+                        View Plot B Details &rarr;
+                    </a>
+                </p>
+            </div>
+
+            <div class="legend-card">
+                <h3>Plot C (South Zone)</h3>
+                <p><strong>Crop Stage:</strong> Maturity</p>
+                <p><strong>Irrigation Type:</strong> Furrow / Drip</p>
+                <p>
+                    <a href="advisory.html#plotC">
+                        View Plot C Details &rarr;
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 AI-based Smart Irrigation Advisory System (KJS-AGR-01). All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!-- irrigation-table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irrigation &amp; Soil Moisture Table - Smart Irrigation Advisory System (KJS-AGR-01)</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="table.css">
+
+
+</head>
+
+<body>
+
+<header>
+    <h1>AI-based Smart Irrigation Advisory System (KJS-AGR-01)</h1>
+    <p class="tagline">Smart Irrigation using AI &amp; Sensor Technology</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farm-info.html">Farm Information</a></li>
+        <li><a href="dashboard.html">Farm Dashboard</a></li>
+        <li><a href="advisory.html">Irrigation Advisory</a></li>
+        <li><a href="irrigation-table.html">Sensor Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <section>
+
+        <h2>Sugarcane Field Irrigation Status Table</h2>
+
+        <p>
+            Real-time AI advisory table showing soil moisture measurements,
+            localized weather data, and calculated water requirements across
+            active plots.
+        </p>
+
+        <table class="irrigation-table">
+
+            <caption>
+                Table 1: Daily Plot-Wise Soil Moisture &amp; Irrigation Schedule
+            </caption>
+
+            <thead>
+                <tr>
+                    <th>Plot ID</th>
+                    <th>Farmer Name</th>
+                    <th>Soil Moisture (%)</th>
+                    <th>Weather</th>
+                    <th>Irrigation Recommendation</th>
+                    <th>Water Requirement</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>KJS-PLOT-101</td>
+                    <td rowspan="2">Ramesh Patil</td>
+                    <td>22%</td>
+                    <td rowspan="2">Sunny / 34°C</td>
+                    <td>
+                        <span class="alert-high">
+                            Irrigate 45 Mins
+                        </span>
+                    </td>
+                    <td>15,000 Liters</td>
+                </tr>
+
+                <tr>
+                    <td>KJS-PLOT-102</td>
+                    <td>28%</td>
+                    <td>
+                        <span class="alert-medium">
+                            Irrigate 30 Mins
+                        </span>
+                    </td>
+                    <td>10,000 Liters</td>
+                </tr>
+
+                <tr>
+                    <td>KJS-PLOT-103</td>
+                    <td>Suresh Kumar</td>
+                    <td>38%</td>
+                    <td>Cloudy / 28°C</td>
+                    <td>
+                        <span class="alert-low">
+                            No Irrigation Needed
+                        </span>
+                    </td>
+                    <td>0 Liters</td>
+                </tr>
+
+                <tr>
+                    <td>KJS-PLOT-104</td>
+                    <td rowspan="2">Anil Deshmukh</td>
+                    <td>18%</td>
+                    <td rowspan="2">Hot &amp; Dry / 38°C</td>
+                    <td>
+                        <span class="alert-high">
+                            Irrigate 60 Mins
+                        </span>
+                    </td>
+                    <td>22,000 Liters</td>
+                </tr>
+
+                <tr>
+                    <td>KJS-PLOT-105</td>
+                    <td>25%</td>
+                    <td>
+                        <span class="alert-medium">
+                            Irrigate 35 Mins
+                        </span>
+                    </td>
+                    <td>12,000 Liters</td>
+                </tr>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align: right;">
+                        Total Daily Water Requirement Across Monitored Plots:
+                    </td>
+                    <td>59,000 Liters</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 AI-based Smart Irrigation Advisory System (KJS-AGR-01). All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

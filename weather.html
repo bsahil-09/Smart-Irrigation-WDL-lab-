@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Forecast - Smart Irrigation Advisory System</title>
+<link rel="stylesheet" href="style.css">
+
+
+    
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>
+            AI-based Smart Irrigation Advisory System (KJS-AGR-01)
+        </h1>
+
+        <p class="tagline">
+            Smart Irrigation using AI &amp; Sensor Technology
+        </p>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farm-info.html">Farm Information</a></li>
+        <li><a href="dashboard.html">Farm Dashboard</a></li>
+        <li><a href="advisory.html">Irrigation Advisory</a></li>
+        <li><a href="irrigation-table.html">Sensor Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+
+        <!-- WEATHER SECTION -->
+
+        <section>
+
+            <h2>
+                Today's Weather Forecast
+            </h2>
+
+            <p class="description">
+
+                Real-time meteorological information is used to support
+                microclimate-based irrigation planning for sugarcane farming.
+
+            </p>
+
+
+            <div class="notice">
+
+                <strong>Live Weather Portal:</strong>
+
+                The official India Meteorological Department (IMD)
+                weather portal is embedded below.
+
+            </div>
+
+
+            <!-- IMD IFRAME -->
+
+            <div class="iframe-container">
+
+                <iframe
+                    src="https://mausam.imd.gov.in/"
+                    title="India Meteorological Department Weather Forecast">
+
+                    Your browser does not support iframes.
+
+                </iframe>
+
+
+                <!-- Fallback link -->
+
+                <div class="iframe-fallback">
+
+                    <p>
+                        The IMD website may restrict display inside
+                        external frames.
+                    </p>
+
+                    <p>
+                        If the weather portal does not load above,
+                        open the official IMD website directly.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="https://mausam.imd.gov.in/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Open IMD Weather Forecast
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- MAP SECTION -->
+
+        <section>
+
+            <h2>
+                Farm Location
+            </h2>
+
+            <p class="description">
+
+                The map below shows the demonstration farm location
+                near Kalyan, Maharashtra.
+
+            </p>
+
+
+            <!-- GOOGLE MAP IFRAME -->
+
+            <div class="map-container">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Kalyan,Maharashtra&output=embed"
+                    title="Google Maps showing farm location"
+                    loading="lazy">
+
+                    Your browser does not support iframes.
+
+                </iframe>
+
+            </div>
+
+
+            <div class="iframe-fallback">
+
+                <p>
+                    View the farm location directly in Google Maps.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://www.google.com/maps?q=Kalyan,Maharashtra"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Open Google Maps
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 AI-based Smart Irrigation Advisory System
+            (KJS-AGR-01). All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

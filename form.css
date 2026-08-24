@@ -1,0 +1,113 @@
+/* TASK 8 - REGISTRATION FORM STYLING */
+
+.registration-form {
+    margin-top: 20px;
+}
+
+.registration-form fieldset {
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #fafdfb, #f4f9f5);
+}
+
+.registration-form legend {
+    font-weight: bold;
+    color: #1b5e20;
+    padding: 0 10px;
+    font-size: 1.1em;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.registration-form label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #2e7d32;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"],
+.registration-form input[type="date"],
+.registration-form input[type="file"],
+.registration-form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    background: linear-gradient(145deg, #ffffff, #f5faf6);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+    outline: none;
+    border-color: #1b5e20;
+    box-shadow: 0 0 6px rgba(27, 94, 32, 0.4);
+}
+
+.registration-form .hint {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 4px;
+}
+
+.registration-form .button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.registration-form button {
+    padding: 12px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.registration-form button[type="submit"] {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+}
+
+.registration-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0d4d16, #2e7d32);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form button[type="reset"] {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.registration-form button[type="reset"]:hover {
+    background-color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .form-group-row {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form .button-group {
+        flex-direction: column;
+    }
+}
