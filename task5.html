@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 5 - Validation</title>
+</head>
+
+<body>
+
+    <script>
+        let farmerName = prompt("Enter Farmer Name:");
+        let mobileNumber = prompt("Enter Mobile Number:");
+        let plotId = prompt("Enter Plot ID (Example: AGR-1234):");
+
+
+        let namePattern = /^[A-Za-z\s]+$/;
+        let mobilePattern = /^\d{10}$/;
+        let plotPattern = /^AGR-\d{4}$/;
+
+
+        if (namePattern.test(farmerName)) {
+            document.write("Farmer Name: Valid<br>");
+        } else {
+            document.write("Farmer Name: Invalid<br>");
+        }
+
+        if (mobilePattern.test(mobileNumber)) {
+            document.write("Mobile Number: Valid<br>");
+        } else {
+            document.write("Mobile Number: Invalid<br>");
+        }
+
+        if (plotPattern.test(plotId)) {
+            document.write("Plot ID: Valid<br>");
+        } else {
+            document.write("Plot ID: Invalid. Format should be AGR-1234<br>");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,270 +1,233 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmer Registration - Smart Irrigation Advisory System (KJS-AGR-01)</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="form.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration - Smart Irrigation Advisory System (KJS-AGR-01)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
 
-<header>
-    <h1>AI-based Smart Irrigation Advisory System (KJS-AGR-01)</h1>
-    <p class="tagline">Smart Irrigation using AI &amp; Sensor Technology</p>
-</header>
+    <header>
+        <h1>AI-based Smart Irrigation Advisory System (KJS-AGR-01)</h1>
+        <p class="tagline">Smart Irrigation using AI &amp; Sensor Technology</p>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="farm-info.html">Farm Information</a></li>
-        <li><a href="dashboard.html">Farm Dashboard</a></li>
-        <li><a href="advisory.html">Irrigation Advisory</a></li>
-        <li><a href="irrigation-table.html">Sensor Data</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="farm-info.html">Farm Information</a></li>
+            <li><a href="dashboard.html">Farm Dashboard</a></li>
+            <li><a href="advisory.html">Irrigation Advisory</a></li>
+            <li><a href="irrigation-table.html">Sensor Data</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <section>
+        <section>
 
-        <h2>Farmer Onboarding &amp; Registration Form</h2>
+            <h2>Farmer Onboarding &amp; Registration Form</h2>
 
-        <p>
-            Register your sugarcane plot to receive automated AI-based
-            irrigation recommendations and SMS alerts.
-        </p>
+            <p>
+                Register your sugarcane plot to receive automated AI-based
+                irrigation recommendations, sensor monitoring, and SMS alerts.
+            </p>
 
-        <form class="registration-form" action="#" method="post" enctype="multipart/form-data">
+            <!-- Success Message Card (Displays after valid submission) -->
+            <div id="successCard" class="success-card" style="display: none;"></div>
 
-            <fieldset>
+            <form id="registrationForm" class="registration-form" action="#" method="post" enctype="multipart/form-data"
+                novalidate>
 
-                <legend>Personal Details</legend>
+                <fieldset>
 
-                <div class="form-group-row">
+                    <legend>Personal Details</legend>
 
-                    <div class="form-group">
-                        <label for="farmerName">Full Name *</label>
+                    <div class="form-group-row">
 
-                        <input
-                            type="text"
-                            id="farmerName"
-                            name="farmerName"
-                            autofocus
-                            required
-                            placeholder="e.g. Ramesh Patil">
+                        <div class="form-group">
+                            <label for="farmerName">Farmer Full Name *</label>
+                            <input type="text" id="farmerName" name="farmerName" autofocus required
+                                placeholder="e.g. Ramesh Patil">
+                            <span class="error-msg" id="farmerNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number *</label>
+                            <input type="tel" id="mobile" name="mobile" required placeholder="10-digit mobile number">
+                            <span class="hint">
+                                Must be a 10-digit Indian phone number (e.g. 9876543210)
+                            </span>
+                            <span class="error-msg" id="mobileError"></span>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="mobile">Mobile Number *</label>
+                    <div class="form-group-row">
 
-                        <input
-                            type="tel"
-                            id="mobile"
-                            name="mobile"
-                            required
-                            pattern="[0-9]{10}"
-                            placeholder="10-digit mobile number">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="farmer@example.com">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
 
-                        <span class="hint">
-                            Must be a 10-digit Indian phone number
-                        </span>
+                        <div class="form-group">
+                            <label for="village">Village / Taluka *</label>
+                            <input type="text" id="village" name="village" required placeholder="e.g. Kolhapur Rural">
+                            <span class="error-msg" id="villageError"></span>
+                        </div>
+
                     </div>
 
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Farm &amp; Crop Details</legend>
+
+                    <div class="form-group-row">
+
+                        <div class="form-group">
+                            <label for="plotId">Plot ID *</label>
+                            <input type="text" id="plotId" name="plotId" required placeholder="e.g. KJS-PLOT-101">
+                            <span class="hint">
+                                Format: KJS-PLOT-XXX (e.g. KJS-PLOT-101) or AGR-1234
+                            </span>
+                            <span class="error-msg" id="plotIdError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cropStage">Current Sugarcane Crop Stage *</label>
+                            <select id="cropStage" name="cropStage" required>
+                                <option value="" disabled selected>
+                                    -- Select Crop Stage --
+                                </option>
+                                <option value="Germination">
+                                    Germination (0 - 30 Days)
+                                </option>
+                                <option value="Tillering">
+                                    Tillering (30 - 120 Days)
+                                </option>
+                                <option value="Grand Growth">
+                                    Grand Growth (120 - 270 Days)
+                                </option>
+                                <option value="Maturity">
+                                    Maturity (270 - 360 Days)
+                                </option>
+                            </select>
+                            <span class="error-msg" id="cropStageError"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group-row">
+
+                        <div class="form-group">
+                            <label for="soilType">Soil Type *</label>
+                            <select id="soilType" name="soilType" required>
+                                <option value="" disabled selected>
+                                    -- Select Soil Type --
+                                </option>
+                                <option value="Black Cotton">
+                                    Black Cotton Soil (Heavy)
+                                </option>
+                                <option value="Loamy">
+                                    Loamy Soil (Medium)
+                                </option>
+                                <option value="Sandy Loam">
+                                    Sandy Loam (Light)
+                                </option>
+                                <option value="Alluvial">
+                                    Alluvial Soil
+                                </option>
+                            </select>
+                            <span class="error-msg" id="soilTypeError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="irrigationMethod">Irrigation Method *</label>
+                            <select id="irrigationMethod" name="irrigationMethod" required>
+                                <option value="" disabled selected>
+                                    -- Select Irrigation Method --
+                                </option>
+                                <option value="Sub-surface Drip">
+                                    Sub-surface Drip Irrigation
+                                </option>
+                                <option value="Surface Drip">
+                                    Surface Drip Irrigation
+                                </option>
+                                <option value="Furrow">
+                                    Furrow / Flood Irrigation
+                                </option>
+                                <option value="Sprinkler">
+                                    Sprinkler System
+                                </option>
+                            </select>
+                            <span class="error-msg" id="irrigationMethodError"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group-row">
+
+                        <div class="form-group">
+                            <label for="soilMoisture">Current Soil Moisture (%) *</label>
+                            <input type="number" id="soilMoisture" name="soilMoisture" min="0" max="100" step="0.1"
+                                required placeholder="e.g. 42.5">
+                            <span class="hint">
+                                Must be between 0% and 100%
+                            </span>
+                            <span class="error-msg" id="soilMoistureError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="regDate">Registration Date *</label>
+                            <input type="date" id="regDate" name="regDate" required>
+                            <span class="hint">
+                                Date must be today or an earlier date
+                            </span>
+                            <span class="error-msg" id="regDateError"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group-row">
+
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="farmPhoto">Upload Farm / Plot Photo *</label>
+                            <input type="file" id="farmPhoto" name="farmPhoto" accept="image/*" required>
+                            <span class="hint">
+                                Upload image showing current crop or field condition (JPG, PNG, WEBP)
+                            </span>
+                            <span class="error-msg" id="farmPhotoError"></span>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+                <div class="button-group">
+                    <button type="reset" id="resetBtn">Reset Form</button>
+                    <button type="submit" id="submitBtn">Register Farm Plot</button>
                 </div>
 
-                <div class="form-group-row">
+            </form>
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
+        </section>
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            placeholder="farmer@example.com">
-                    </div>
+    </div>
 
-                    <div class="form-group">
-                        <label for="village">Village / Taluka *</label>
+    <footer>
+        <p>&copy; 2026 AI-based Smart Irrigation Advisory System (KJS-AGR-01). All Rights Reserved.</p>
+    </footer>
 
-                        <input
-                            type="text"
-                            id="village"
-                            name="village"
-                            required
-                            placeholder="e.g. Kolhapur Rural">
-                    </div>
-
-                </div>
-
-            </fieldset>
-
-            <fieldset>
-
-                <legend>Farm &amp; Crop Details</legend>
-
-                <div class="form-group-row">
-
-                    <div class="form-group">
-                        <label for="plotId">Plot ID *</label>
-
-                        <input
-                            type="text"
-                            id="plotId"
-                            name="plotId"
-                            required
-                            pattern="KJS-PLOT-[0-9]{3}"
-                            placeholder="e.g. KJS-PLOT-101">
-
-                        <span class="hint">
-                            Format: KJS-PLOT-XXX (e.g. KJS-PLOT-104)
-                        </span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cropStage">
-                            Current Sugarcane Crop Stage *
-                        </label>
-
-                        <select id="cropStage" name="cropStage" required>
-                            <option value="" disabled selected>
-                                -- Select Crop Stage --
-                            </option>
-                            <option value="Germination">
-                                Germination (0 - 30 Days)
-                            </option>
-                            <option value="Tillering">
-                                Tillering (30 - 120 Days)
-                            </option>
-                            <option value="Grand Growth">
-                                Grand Growth (120 - 270 Days)
-                            </option>
-                            <option value="Maturity">
-                                Maturity (270 - 360 Days)
-                            </option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="form-group-row">
-
-                    <div class="form-group">
-                        <label for="soilType">Soil Type *</label>
-
-                        <select id="soilType" name="soilType" required>
-                            <option value="" disabled selected>
-                                -- Select Soil Type --
-                            </option>
-                            <option value="Black Cotton">
-                                Black Cotton Soil (Heavy)
-                            </option>
-                            <option value="Loamy">
-                                Loamy Soil (Medium)
-                            </option>
-                            <option value="Sandy Loam">
-                                Sandy Loam (Light)
-                            </option>
-                            <option value="Alluvial">
-                                Alluvial Soil
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="irrigationMethod">
-                            Irrigation Method *
-                        </label>
-
-                        <select
-                            id="irrigationMethod"
-                            name="irrigationMethod"
-                            required>
-
-                            <option value="" disabled selected>
-                                -- Select Irrigation Method --
-                            </option>
-
-                            <option value="Sub-surface Drip">
-                                Sub-surface Drip Irrigation
-                            </option>
-
-                            <option value="Surface Drip">
-                                Surface Drip Irrigation
-                            </option>
-
-                            <option value="Furrow">
-                                Furrow / Flood Irrigation
-                            </option>
-
-                            <option value="Sprinkler">
-                                Sprinkler System
-                            </option>
-
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="form-group-row">
-
-                    <div class="form-group">
-                        <label for="regDate">
-                            Registration Date *
-                        </label>
-
-                        <input
-                            type="date"
-                            id="regDate"
-                            name="regDate"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="farmPhoto">
-                            Upload Farm / Plot Photo *
-                        </label>
-
-                        <input
-                            type="file"
-                            id="farmPhoto"
-                            name="farmPhoto"
-                            accept="image/*"
-                            required>
-
-                        <span class="hint">
-                            Upload image showing current crop or field condition
-                        </span>
-                    </div>
-
-                </div>
-
-            </fieldset>
-
-            <div class="button-group">
-                    <button type="reset">Reset Form</button>
-                    <button type="button" onclick="validateForm()">
-                        Register Farm Plot
-                    </button>
-            </div>
-
-        </form>
-
-    </section>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 AI-based Smart Irrigation Advisory System (KJS-AGR-01). All Rights Reserved.</p>
     <script src="valid.js"></script>
-</footer>
 
 </body>
+
 </html>

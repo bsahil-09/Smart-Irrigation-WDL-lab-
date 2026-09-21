@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2 - Irrigation Recommendation</title>
+</head>
+
+<body>
+
+    <script>
+        let soilMoisture = parseFloat(prompt("Enter Soil Moisture (%):"));
+        let rainForecast = prompt("Is rain expected? (yes/no)").toLowerCase();
+        let cropStage = prompt("Enter Crop Stage:");
+
+        let recommendation;
+
+        if (rainForecast === "yes") {
+            recommendation = "Postpone Irrigation";
+        }
+        else if (soilMoisture < 30) {
+            recommendation = "Irrigation Required Immediately";
+        }
+        else if (soilMoisture >= 30 && soilMoisture <= 50) {
+            recommendation = "Monitor Soil Moisture";
+        }
+        else {
+            recommendation = "Irrigation Not Required";
+        }
+
+        document.write("<h2>Irrigation Recommendation</h2>");
+        document.write("Soil Moisture: " + soilMoisture + "%<br>");
+        document.write("Rain Forecast: " + rainForecast + "<br>");
+        document.write("Crop Stage: " + cropStage + "<br>");
+        document.write("<h3>Recommendation: " + recommendation + "</h3>");
+    </script>
+
+</body>
+
+</html>

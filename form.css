@@ -102,6 +102,89 @@
     background-color: #ccc;
 }
 
+/* VALIDATION STATES & FEEDBACK */
+.error-msg {
+    color: #d32f2f;
+    font-size: 0.82em;
+    font-weight: 600;
+    margin-top: 5px;
+    display: none;
+    line-height: 1.3;
+}
+
+.error-msg.visible {
+    display: block;
+}
+
+.registration-form input.input-error,
+.registration-form select.input-error {
+    border-color: #d32f2f !important;
+    background: #fff8f8 !important;
+    box-shadow: 0 0 6px rgba(211, 47, 47, 0.35) !important;
+}
+
+.registration-form input.input-valid,
+.registration-form select.input-valid {
+    border-color: #2e7d32 !important;
+    background: #f6fbf7 !important;
+}
+
+/* SUCCESS NOTIFICATION CARD */
+.success-card {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    padding: 22px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(46, 125, 50, 0.2);
+    animation: slideDown 0.35s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-card h3 {
+    color: #1b5e20;
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.success-card p {
+    color: #2e7d32;
+    margin: 0 0 15px 0;
+    font-size: 0.95em;
+}
+
+.success-details {
+    background: #ffffff;
+    border: 1px solid #a5d6a7;
+    border-radius: 6px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    font-size: 0.9em;
+}
+
+.success-details div {
+    color: #333;
+}
+
+.success-details strong {
+    color: #1b5e20;
+}
+
 @media (max-width: 600px) {
     .form-group-row {
         grid-template-columns: 1fr;
@@ -109,5 +192,9 @@
 
     .registration-form .button-group {
         flex-direction: column;
+    }
+
+    .success-details {
+        grid-template-columns: 1fr;
     }
 }

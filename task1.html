@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 1 - Irrigation Calculator</title>
+</head>
+
+<body>
+
+    <script>
+
+        let farmerName = prompt("Enter Farmer Name:");
+        let plotId = prompt("Enter Plot ID:");
+
+        let currentMoisture = parseFloat(prompt("Enter Current Soil Moisture (%):"));
+        let requiredMoisture = parseFloat(prompt("Enter Required Soil Moisture (%):"));
+
+
+        let moistureDeficit = requiredMoisture - currentMoisture;
+
+        let status;
+
+        if (moistureDeficit > 0) {
+            status = "Water required. Moisture Deficit: " + moistureDeficit + "%";
+        } else {
+            status = "No irrigation required. Soil moisture is sufficient.";
+        }
+
+
+        alert(
+            "Farmer Name: " + farmerName +
+            "\nPlot ID: " + plotId +
+            "\nCurrent Moisture: " + currentMoisture + "%" +
+            "\nRequired Moisture: " + requiredMoisture + "%" +
+            "\n" + status
+        );
+
+
+        document.write("<h2>Irrigation Status</h2>");
+        document.write("Farmer Name: " + farmerName + "<br>");
+        document.write("Plot ID: " + plotId + "<br>");
+        document.write("Current Soil Moisture: " + currentMoisture + "%<br>");
+        document.write("Required Soil Moisture: " + requiredMoisture + "%<br>");
+        document.write("Moisture Deficit: " + moistureDeficit + "%<br>");
+        document.write("<b>Status: " + status + "</b>");
+    </script>
+
+</body>
+
+</html>
